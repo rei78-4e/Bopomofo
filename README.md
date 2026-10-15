@@ -22,6 +22,10 @@ npm run dev                 # = wrangler dev --remote
 
 http://localhost:8787 を開く。
 
+## 公開
+
+`wrangler.toml` でカスタムドメイン `bopomofo.rei78.cc` を設定済み。`npx wrangler deploy` を実行すると、Cloudflare が DNS レコードと証明書を自動で作成する。
+
 ## API
 
 `POST /api/convert` に `{ "text": "こんにちは", "lang": "ja" }`(`lang` は `ja` / `en`)を送ると、次を返す。
