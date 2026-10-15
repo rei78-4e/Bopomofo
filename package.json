@@ -1,0 +1,29 @@
+{
+  "name": "bopomofo",
+  "scripts": {
+    "dev": "wrangler dev --remote",
+    "dev:local": "wrangler dev",
+    "test": "node --test test/*.test.ts",
+    "typecheck": "tsc",
+    "types": "wrangler types"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rei78-4e/Bopomofo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rei78-4e/Bopomofo/issues"
+  },
+  "homepage": "https://github.com/rei78-4e/Bopomofo#readme",
+  "dependencies": {
+    "opencc-js": "^1.4.2",
+    "pinyin-pro": "^3.29.5",
+    "pinyin-zhuyin": "^1.0.4"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "wrangler": "^4.151.0"
+  },
+  "private": true,
+  "type": "module"
+}
