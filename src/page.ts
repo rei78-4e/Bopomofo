@@ -41,6 +41,7 @@ export const PAGE_HTML = /* html */ `<!doctype html>
   .keys { display: flex; gap: 8px; align-items: center; margin-top: 16px; }
   .keys code { flex: 1; font-family: ui-monospace, Menlo, Consolas, monospace; white-space: pre-wrap; word-break: break-all;
     background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 8px; }
+  .hint { font-size: .8rem; color: var(--muted); }
   .error { color: var(--error); }
   [hidden] { display: none !important; }
 </style>
@@ -54,6 +55,7 @@ export const PAGE_HTML = /* html */ `<!doctype html>
       <label><input type="radio" name="lang" value="ja" checked> 日本語</label>
       <label><input type="radio" name="lang" value="en"> 英語</label>
       <button id="submit" type="submit">変換</button>
+      <span class="hint">Ctrl + Enter(Mac は ⌘ + Enter)でも変換</span>
     </div>
   </form>
   <p id="error" class="error" role="alert" hidden></p>
@@ -114,6 +116,13 @@ export const PAGE_HTML = /* html */ `<!doctype html>
     } finally {
       button.disabled = false;
     }
+  });
+
+  // Ctrl + Enter(Mac は ⌘ + Enter)で変換。IME 変換確定中の Enter は無視する
+  $("text").addEventListener("keydown", (e) => {
+    if (e.key !== "Enter" || !(e.ctrlKey || e.metaKey) || e.isComposing) return;
+    e.preventDefault();
+    if (!$("submit").disabled) form.requestSubmit();
   });
 
   $("copy").addEventListener("click", async () => {
