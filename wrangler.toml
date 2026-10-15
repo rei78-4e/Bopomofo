@@ -1,0 +1,7 @@
+name = "bopomofo"
+main = "src/index.ts"
+compatibility_date = "2025-09-01"
+routes = [{ pattern = "bopomofo.rei78.cc", custom_domain = true }]
+
+[ai]
+binding = "AI"
