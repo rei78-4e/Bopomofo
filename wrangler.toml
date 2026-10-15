@@ -5,3 +5,7 @@ routes = [{ pattern = "bopomofo.rei78.cc", custom_domain = true }]
 
 [ai]
 binding = "AI"
+
+# wrangler preview(main 以外のブランチのビルド)用
+[previews.ai]
+binding = "AI"
