@@ -69,6 +69,10 @@ export const PAGE_HTML = /* html */ `<!doctype html>
       <button id="copy" class="secondary" type="button">コピー</button>
     </div>
   </section>
+  <section>
+    <h2><label for="scratch">テスト入力欄(どこにも送信されない)</label></h2>
+    <textarea id="scratch" placeholder="キー列を打って試す"></textarea>
+  </section>
 </main>
 <script>
   const $ = (id) => document.getElementById(id);
